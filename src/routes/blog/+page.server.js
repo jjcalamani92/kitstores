@@ -5,3 +5,4 @@ export async function load({ fetch }) {
 	return await response.json()
 }
 
+export const prerender = 'auto';
