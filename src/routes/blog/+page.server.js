@@ -5,8 +5,3 @@ export async function load({ fetch }) {
 	return await response.json()
 }
 
-export const config = {
-	isr: {
-			expiration: 60,
-	}
-};
