@@ -4,7 +4,7 @@
 </svelte:head>
 <script>
 	export let data;
-	console.log('data', data)
+	// console.log('data', data)
 </script>
 <div class="text-column">
 	<h1 class="bg-red-100">{data.data.name}</h1>
