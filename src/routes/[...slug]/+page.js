@@ -1,17 +1,24 @@
 // @ts-nocheck
 import { dev } from '$app/environment';
 import { error } from '@sveltejs/kit';
+export const config = {
+	isr: {
+			
+			expiration: 60,
 
+			
+	}
+};
 // we don't need any JS on this page, though we'll load
 // it in dev so that we get hot module replacement
 export const csr = dev;
 
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
-export const prerender = 'auto';
+export const prerender = false;
 
 export async function load({ params }) {
-	console.log('params', params.slug)
+	// console.log('params', params.slug)
 
 
 	function concatenarElementos(arrOrStr) {
@@ -21,7 +28,7 @@ export async function load({ params }) {
 	
 		return resultado;
 	}
-	console.log('concatenarElementos', concatenarElementos(['ropa', 'mujer']));
+	// console.log('concatenarElementos', concatenarElementos(['ropa', 'mujer']));
 
 	const pages = await fetch(
 		`https://crisapi.vercel.app/api/v3/wear2/query/pages/page/siteId?id=64a56f2cfd5b4902feb027de`
@@ -32,12 +39,15 @@ export async function load({ params }) {
 	const categories1 = await fetch(
 		`https://crisapi.vercel.app/api/v3/wear2/query/categories/1/category/siteId?id=64a56f2cfd5b4902feb027de`
 	).then((response) => response.json());
+	const categories2 = await fetch(
+		`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
+	).then((response) => response.json());
   
 	// const categories2 = await fetch(
 	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
 	// ).then((response) => response.json());
   
-	const paths = [...pages, ...categories0, ...categories1,]
+	const paths = [...pages, ...categories0, ...categories1, ...categories2,]
 
   function getCategories (id) {
 		return paths.filter(

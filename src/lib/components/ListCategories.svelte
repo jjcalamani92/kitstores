@@ -16,6 +16,7 @@
 						i % 4 === 0 ? 'lg:col-span-2' : 'lg:col-span-1'
 					} relative group flex justify-center items-center h-[30rem] w-full`}
 				>
+					<!-- svelte-ignore a11y-img-redundant-alt -->
 					<img
 						class="object-center object-cover h-full w-full z-0"
 						src={thumbnailUrl ||
