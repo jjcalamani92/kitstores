@@ -12,14 +12,18 @@ export const prerender = 'auto';
 
 export async function load({ params }) {
 	const pages = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/pages/page/siteId?id=64861a8a63e401e6fc713ee9`
+		`https://crisapi.vercel.app/api/v3/wear2/query/pages/page/siteId?id=64a56f2cfd5b4902feb027de`
+	).then((response) => response.json());
+	const categories0 = await fetch(
+		`https://crisapi.vercel.app/api/v3/wear2/query/categories/0/category/siteId?id=64a56f2cfd5b4902feb027de`
 	).then((response) => response.json());
   
 	const page = pages.find((page) => page.slug === params.slug);
-
+	const categories = categories0.filter((category) => category.parentId === page._id)
+	
 	if (!page) throw error(404, 'Not found');
 
 	return {
-		page
+		page, categories
 	};
 }
