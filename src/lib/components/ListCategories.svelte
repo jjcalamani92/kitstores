@@ -4,7 +4,7 @@
 	 */
 	export let categories;
 	import { page } from '$app/stores';
-	console.log('page', $page)
+	// console.log('page', $page)
 </script>
 
 <div class="mx-auto px-4 py-6 sm:px-6 lg:px-8">

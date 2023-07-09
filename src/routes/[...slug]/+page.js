@@ -11,7 +11,7 @@ export const csr = dev;
 export const prerender = 'auto';
 
 export async function load({ params }) {
-	console.log('params', params)
+	console.log('params', params.slug)
 
 
 	function concatenarElementos(arrOrStr) {
@@ -21,6 +21,7 @@ export async function load({ params }) {
 	
 		return resultado;
 	}
+	console.log('concatenarElementos', concatenarElementos(['ropa', 'mujer']));
 
 	const pages = await fetch(
 		`https://crisapi.vercel.app/api/v3/wear2/query/pages/page/siteId?id=64a56f2cfd5b4902feb027de`
@@ -28,15 +29,15 @@ export async function load({ params }) {
 	const categories0 = await fetch(
 		`https://crisapi.vercel.app/api/v3/wear2/query/categories/0/category/siteId?id=64a56f2cfd5b4902feb027de`
 	).then((response) => response.json());
-	const categories1 = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/categories/1/category/siteId?id=64a56f2cfd5b4902feb027de`
-	).then((response) => response.json());
+	// const categories1 = await fetch(
+	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/1/category/siteId?id=64a56f2cfd5b4902feb027de`
+	// ).then((response) => response.json());
   
-	const categories2 = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
-	).then((response) => response.json());
+	// const categories2 = await fetch(
+	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
+	// ).then((response) => response.json());
   
-	const paths = [...pages, ...categories0, ...categories1, ...categories2]
+	const paths = [...pages, ...categories0,]
 
   function getCategories (id) {
 		return paths.filter(
