@@ -15,19 +15,9 @@ export async function load({ params }) {
 
 
 	function concatenarElementos(arrOrStr) {
-		let arr
+		
 	
-		if (typeof arrOrStr === "string") {
-			return arrOrStr;
-		} else {
-			arr = arrOrStr;
-		}
-	
-		if (arr.length === 0) {
-			return "";
-		}
-	
-		let resultado = arr.join("/");
+		let resultado = arrOrStr.join("/");
 	
 		return resultado;
 	}
