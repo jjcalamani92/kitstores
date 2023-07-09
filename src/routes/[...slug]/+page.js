@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { dev } from '$app/environment';
+
 import { error } from '@sveltejs/kit';
 export const config = {
 	isr: {
@@ -9,6 +10,7 @@ export const config = {
 			
 	}
 };
+
 // we don't need any JS on this page, though we'll load
 // it in dev so that we get hot module replacement
 export const csr = dev;
@@ -18,8 +20,6 @@ export const csr = dev;
 export const prerender = false;
 
 export async function load({ params }) {
-	// console.log('params', params.slug)
-
 
 	function concatenarElementos(arrOrStr) {
 		

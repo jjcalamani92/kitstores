@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/private';
 export const prerender = false;
 export const config = {
     isr: {
@@ -9,7 +10,7 @@ export const config = {
 };
 export async function load() {
 	const pages = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/pages/page/siteId?id=64a56f2cfd5b4902feb027de`
+		`${env.URL}/api/${env.V}/${env.TYPE}/query/pages/page/siteId?id=${env.UID}`
 	).then((response) => response.json());
   
 	return { pages }

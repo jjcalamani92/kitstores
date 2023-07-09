@@ -7,7 +7,7 @@
 	// console.log('page', $page)
 </script>
 
-<div class="mx-auto px-4 py-6 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-5xl lg:max-w-none space-y-6">
 		<div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
 			{#each products as { _id, slug, data: { name, thumbnailUrl } }, i}

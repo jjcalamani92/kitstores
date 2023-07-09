@@ -7,7 +7,7 @@
 	// console.log('page', $page)
 </script>
 
-<div class="mx-auto px-4 py-6 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 	<div class="mx-auto max-w-5xl lg:max-w-none space-y-6">
 		<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
 			{#each categories as { _id, slug, data: { name, thumbnailUrl } }, i}
