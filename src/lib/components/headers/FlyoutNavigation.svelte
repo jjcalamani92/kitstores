@@ -22,7 +22,7 @@
                 class="object-cover object-center"
               />
             </div>
-            <a href="#" class="mt-6 block font-medium text-gray-900">
+            <a href={"#"} class="mt-6 block font-medium text-gray-900">
               <span class="absolute inset-0 z-10" aria-hidden="true" />
               New Arrivals
             </a>
@@ -38,7 +38,7 @@
                 class="object-cover object-center"
               />
             </div>
-            <a href="#" class="mt-6 block font-medium text-gray-900">
+            <a href={"#"} class="mt-6 block font-medium text-gray-900">
               <span class="absolute inset-0 z-10" aria-hidden="true" />
               Basic Tees
             </a>
@@ -54,31 +54,31 @@
               class="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
             >
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Tops</a>
+                <a href={"#"} class="hover:text-gray-800">Tops</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Dresses</a>
+                <a href={"#"} class="hover:text-gray-800">Dresses</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Pants</a>
+                <a href={"#"} class="hover:text-gray-800">Pants</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Denim</a>
+                <a href={"#"} class="hover:text-gray-800">Denim</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Sweaters</a>
+                <a href={"#"} class="hover:text-gray-800">Sweaters</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">T-Shirts</a>
+                <a href={"#"} class="hover:text-gray-800">T-Shirts</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Jackets</a>
+                <a href={"#"} class="hover:text-gray-800">Jackets</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Activewear</a>
+                <a href={"#"} class="hover:text-gray-800">Activewear</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Browse All</a>
+                <a href={"#"} class="hover:text-gray-800">Browse All</a>
               </li>
             </ul>
           </div>
@@ -92,22 +92,22 @@
               class="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
             >
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Watches</a>
+                <a href={"#"} class="hover:text-gray-800">Watches</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Wallets</a>
+                <a href={"#"} class="hover:text-gray-800">Wallets</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Bags</a>
+                <a href={"#"} class="hover:text-gray-800">Bags</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Sunglasses</a>
+                <a href={"#"} class="hover:text-gray-800">Sunglasses</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Hats</a>
+                <a href={"#"} class="hover:text-gray-800">Hats</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Belts</a>
+                <a href={"#"} class="hover:text-gray-800">Belts</a>
               </li>
             </ul>
           </div>
@@ -119,19 +119,19 @@
               class="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
             >
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Full Nelson</a>
+                <a href={"#"} class="hover:text-gray-800">Full Nelson</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">My Way</a>
+                <a href={"#"} class="hover:text-gray-800">My Way</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Re-Arranged</a>
+                <a href={"#"} class="hover:text-gray-800">Re-Arranged</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Counterfeit</a>
+                <a href={"#"} class="hover:text-gray-800">Counterfeit</a>
               </li>
               <li class="flex">
-                <a href="#" class="hover:text-gray-800">Significant Other</a>
+                <a href={"#"} class="hover:text-gray-800">Significant Other</a>
               </li>
             </ul>
           </div>

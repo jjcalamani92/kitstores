@@ -104,15 +104,15 @@
 
 					<div class="ml-auto flex items-center">
 						<div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-							<a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+							<a href={"#"} class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
 							<span class="h-6 w-px bg-gray-200" aria-hidden="true" />
-							<a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800"
+							<a href={"#"} class="text-sm font-medium text-gray-700 hover:text-gray-800"
 								>Create account</a
 							>
 						</div>
 
 						<div class="hidden lg:ml-8 lg:flex">
-							<a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
+							<a href={null} class="flex items-center text-gray-700 hover:text-gray-800">
 								<img
 									src="https://tailwindui.com/img/flags/flag-canada.svg"
 									alt=""
