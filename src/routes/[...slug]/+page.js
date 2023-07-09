@@ -29,15 +29,15 @@ export async function load({ params }) {
 	const categories0 = await fetch(
 		`https://crisapi.vercel.app/api/v3/wear2/query/categories/0/category/siteId?id=64a56f2cfd5b4902feb027de`
 	).then((response) => response.json());
-	// const categories1 = await fetch(
-	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/1/category/siteId?id=64a56f2cfd5b4902feb027de`
-	// ).then((response) => response.json());
+	const categories1 = await fetch(
+		`https://crisapi.vercel.app/api/v3/wear2/query/categories/1/category/siteId?id=64a56f2cfd5b4902feb027de`
+	).then((response) => response.json());
   
 	// const categories2 = await fetch(
 	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
 	// ).then((response) => response.json());
   
-	const paths = [...pages, ...categories0,]
+	const paths = [...pages, ...categories0, ...categories1,]
 
   function getCategories (id) {
 		return paths.filter(
