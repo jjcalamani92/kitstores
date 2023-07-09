@@ -3,8 +3,11 @@
 	import { isMenuOpen, isMobileMenuOpen, menuMobile, menu } from '$lib/stores';
 	import FlyoutNavigation from './FlyoutNavigation.svelte';
 	import MobileMenu from './MobileMenu.svelte';
-
-
+	/**
+	 * @type {any}
+	 */
+	 export let pages;
+	console.log('pages Store Navigation', pages)
 
 </script>
 
@@ -88,17 +91,15 @@
 							{/if}
 							</div>
 							
-					
-							<a
-								href="#"
-								class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-								>Company</a
-							>
-							<a
-								href="#"
-								class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-								>Stores</a
-							>
+							{#each pages as { _id, slug, data:{name} }, i}
+								
+								<a
+									href="/{slug}"
+									class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+									>{name}</a
+								>
+							{/each}
+							
 						</div>
 					</div>
 

@@ -1,13 +1,14 @@
 <script>
+	export let data;
 	import './styles.css';
 	import StoreNavigation from '$lib/components/headers/StoreNavigation.svelte';
 	import ShoppingCarts from '$lib/components/shoppingCarts/ShoppingCarts.svelte';
 	// import StoreNavigation from '../components/headers/StoreNavigation.svelte';
-	
+	// console.log('pages', data)
 </script>
 
 <div class="app">
-	<StoreNavigation />
+	<StoreNavigation pages={data.pages} />
 
 	<ShoppingCarts />
 	<!-- <Header0 /> -->

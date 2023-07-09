@@ -1,10 +1,11 @@
 <script>
+	// export let data;
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 	import Modal from '$lib/components/Modal.svelte';
 	import { modal } from '$lib/stores';
-
+	// console.log('pages', data);
 </script>
 
 <svelte:head>
