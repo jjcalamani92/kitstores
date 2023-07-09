@@ -1,6 +1,4 @@
 <script>
-	import Header from './Header.svelte';
-	import Header0 from '../components/Header0.svelte';
 	import './styles.css';
 	import StoreNavigation from '$lib/components/headers/StoreNavigation.svelte';
 	import ShoppingCarts from '$lib/components/shoppingCarts/ShoppingCarts.svelte';
