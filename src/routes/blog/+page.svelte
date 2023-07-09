@@ -7,7 +7,7 @@
 	// console.log('data', data)
 </script>
 <div class="text-column">
-	<h1 class="bg-red-100">{data.data.name}</h1>
+	<h1 class="bg-red-100">{"data.data.name"}</h1>
 
 	<p>
 		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the

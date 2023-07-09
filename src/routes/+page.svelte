@@ -2,6 +2,9 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import Modal from '$lib/components/Modal.svelte';
+	import { modal } from '$lib/stores';
+
 </script>
 
 <svelte:head>
@@ -10,7 +13,7 @@
 </svelte:head>
 
 <section>
-	<h1>
+	<!-- <h1>
 		<span class="welcome">
 			<picture>
 				<source srcset={welcome} type="image/webp" />
@@ -25,7 +28,13 @@
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
 
-	<Counter />
+	<Counter /> -->
+	<!-- <Counter /> -->
+	<button type="button" on:click={modal.toggle}>Abrir Modal</button>
+	{#if $modal}
+	<Modal />
+  
+{/if}
 </section>
 
 <style>

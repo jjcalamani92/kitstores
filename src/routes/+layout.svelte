@@ -1,11 +1,19 @@
 <script>
 	import Header from './Header.svelte';
+	import Header0 from '../components/Header0.svelte';
 	import './styles.css';
+	import StoreNavigation from '$lib/components/headers/StoreNavigation.svelte';
+	import ShoppingCarts from '$lib/components/shoppingCarts/ShoppingCarts.svelte';
+	// import StoreNavigation from '../components/headers/StoreNavigation.svelte';
+	
 </script>
 
 <div class="app">
-	<Header />
+	<StoreNavigation />
+
+	<ShoppingCarts />
 	<!-- <Header0 /> -->
+	<!-- <Header /> -->
 
 	<main>
 		<slot />
