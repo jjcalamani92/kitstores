@@ -10,7 +10,7 @@ export const config = {
 };
 export async function load() {
 	const pages = await fetch(
-		`${env.URL}/api/${env.V}/${env.TYPE}/query/pages/page/siteId?id=${env.UID}`
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/pages/page/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
   
 	return { pages }
