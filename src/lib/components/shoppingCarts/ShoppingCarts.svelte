@@ -56,7 +56,7 @@
                           <div>
                             <div class="flex justify-between text-base font-medium text-gray-900">
                               <h3>
-                                <a href="#">Throwback Hip Bag</a>
+                                <a href={"#"}>Throwback Hip Bag</a>
                               </h3>
                               <p class="ml-4">$90.00</p>
                             </div>
@@ -80,7 +80,7 @@
                           <div>
                             <div class="flex justify-between text-base font-medium text-gray-900">
                               <h3>
-                                <a href="#">Medium Stuff Satchel</a>
+                                <a href={"#"}>Medium Stuff Satchel</a>
                               </h3>
                               <p class="ml-4">$32.00</p>
                             </div>
@@ -109,7 +109,7 @@
                 </div>
                 <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                 <div class="mt-6">
-                  <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                  <a href={"#"} class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
                 </div>
                 <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p>

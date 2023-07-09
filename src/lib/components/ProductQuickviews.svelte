@@ -73,7 +73,7 @@
                       </svg>
                     </div>
                     <p class="sr-only">3.9 out of 5 stars</p>
-                    <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
+                    <a href={"#"} class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
                   </div>
                 </div>
               </section>
@@ -124,7 +124,7 @@
                   <div class="mt-10">
                     <div class="flex items-center justify-between">
                       <h4 class="text-sm font-medium text-gray-900">Size</h4>
-                      <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
+                      <a href={"#"} class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
                     </div>
 
                     <fieldset class="mt-4">
