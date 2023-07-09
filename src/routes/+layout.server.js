@@ -1,3 +1,5 @@
+export const prerender = 'auto';
+
 /** @type {import('./$types').LayoutServerLoad} */
 export async function load() {
 	const pages = await fetch(
