@@ -43,6 +43,10 @@ export async function load({ params }) {
 		`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
 	).then((response) => response.json());
   
+	const products = await fetch(
+		`https://crisapi.vercel.app/api/v3/wear2/query/products/product/siteId?id=64a56f2cfd5b4902feb027de`
+	).then((response) => response.json());
+  
 	// const categories2 = await fetch(
 	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
 	// ).then((response) => response.json());
@@ -51,6 +55,11 @@ export async function load({ params }) {
 
   function getCategories (id) {
 		return paths.filter(
+			(category) => category.parentId === id
+		);
+	}
+  function getProducts (id) {
+		return products.filter(
 			(category) => category.parentId === id
 		);
 	}
@@ -65,6 +74,6 @@ export async function load({ params }) {
 	if (!page) throw error(404, 'Not found');
 
 	return {
-		page, categories: getCategories(page._id)
+		page, categories: getCategories(page._id), products: getProducts(page._id)
 	};
 }
