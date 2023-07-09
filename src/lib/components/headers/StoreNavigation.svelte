@@ -7,7 +7,6 @@
 	 * @type {any}
 	 */
 	 export let pages;
-	console.log('pages Store Navigation', pages)
 
 </script>
 

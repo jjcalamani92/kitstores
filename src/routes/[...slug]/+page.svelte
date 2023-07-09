@@ -1,8 +1,7 @@
 <script>
 	import ListCategories from "$lib/components/ListCategories.svelte";
-
 	export let data;
-	console.log('data', data)
+	// console.log('data', data)
 </script>
 <svelte:head>
 	<title>{data.page.data.name}</title>

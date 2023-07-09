@@ -11,19 +11,59 @@ export const csr = dev;
 export const prerender = 'auto';
 
 export async function load({ params }) {
+	console.log('params', params)
+
+
+	function concatenarElementos(arrOrStr) {
+		let arr
+	
+		if (typeof arrOrStr === "string") {
+			return arrOrStr;
+		} else {
+			arr = arrOrStr;
+		}
+	
+		if (arr.length === 0) {
+			return "";
+		}
+	
+		let resultado = arr.join("/");
+	
+		return resultado;
+	}
+
 	const pages = await fetch(
 		`https://crisapi.vercel.app/api/v3/wear2/query/pages/page/siteId?id=64a56f2cfd5b4902feb027de`
 	).then((response) => response.json());
 	const categories0 = await fetch(
 		`https://crisapi.vercel.app/api/v3/wear2/query/categories/0/category/siteId?id=64a56f2cfd5b4902feb027de`
 	).then((response) => response.json());
+	const categories1 = await fetch(
+		`https://crisapi.vercel.app/api/v3/wear2/query/categories/1/category/siteId?id=64a56f2cfd5b4902feb027de`
+	).then((response) => response.json());
   
-	const page = pages.find((page) => page.slug === params.slug);
-	const categories = categories0.filter((category) => category.parentId === page._id)
+	const categories2 = await fetch(
+		`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
+	).then((response) => response.json());
+  
+	const paths = [...pages, ...categories0, ...categories1, ...categories2]
+
+  function getCategories (id) {
+		return paths.filter(
+			(category) => category.parentId === id
+		);
+	}
+
+
+
+
+
+	const page = paths.find((page) => concatenarElementos(page.data.params.path) === params.slug);
+	// const categories = categories0.filter((category) => category.parentId === page._id)
 	
 	if (!page) throw error(404, 'Not found');
 
 	return {
-		page, categories
+		page, categories: getCategories(page._id)
 	};
 }

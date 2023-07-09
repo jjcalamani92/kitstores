@@ -3,7 +3,8 @@
 	 * @type {any}
 	 */
 	export let categories;
-
+	import { page } from '$app/stores';
+	console.log('page', $page)
 </script>
 
 <div class="mx-auto px-4 py-6 sm:px-6 lg:px-8">
@@ -23,7 +24,7 @@
 					/>
 
 					<a
-						href={'#'}
+						href="{$page.url.pathname}/{slug}"
 						class="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white text-center"
 					>
 						{name}
