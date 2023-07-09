@@ -1,6 +1,6 @@
 <script>
 	import { cart } from "$lib/stores";
-	import { isMenuOpen, isMobileMenuOpen, menuMobile, menu } from '$lib/stores';
+	import { menuMobile, menu, search } from '$lib/stores';
 	import FlyoutNavigation from './FlyoutNavigation.svelte';
 	import MobileMenu from './MobileMenu.svelte';
 	/**
@@ -51,7 +51,7 @@
 
 					<!-- Logo -->
 					<div class="ml-4 flex lg:ml-0">
-						<a href="#">
+						<a href="/">
 							<span class="sr-only">Your Company</span>
 							<img
 								class="h-8 w-auto"
@@ -125,7 +125,7 @@
 
 						<!-- Search -->
 						<div class="flex lg:ml-6">
-							<a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+							<button on:click={search.toggle} class="p-2 text-gray-400 hover:text-gray-500">
 								<span class="sr-only">Search</span>
 								<svg
 									class="h-6 w-6"
@@ -141,7 +141,7 @@
 										d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
 									/>
 								</svg>
-							</a>
+							</button>
 						</div>
 
 						<!-- Cart -->

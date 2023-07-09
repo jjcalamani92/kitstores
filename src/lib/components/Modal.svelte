@@ -1,10 +1,11 @@
 <script >
-	import { isModalOpen, modal } from "$lib/stores";
+	import {  modal } from "$lib/stores";
 	import  clickOutside  from "$lib/utils/clickOutside";
   import { fade } from 'svelte/transition'
 
 
 </script>
+{#if $modal}
 <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" transition:fade>
   <!--
     Background backdrop, show/hide based on modal state.
@@ -54,3 +55,4 @@
     </div>
   </div>
 </div>
+{/if}

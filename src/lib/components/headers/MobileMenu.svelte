@@ -1,5 +1,5 @@
 <script>
-  import { isMobileMenuOpen, ui, menuMobile } from "$lib/stores";
+  import { menuMobile } from "$lib/stores";
 	import clickOutside from "$lib/utils/clickOutside";
 	import { fly, fade } from "svelte/transition";
   

@@ -4,7 +4,7 @@
 
   
 </script>
-<div class="absolute inset-x-0 top-full text-sm text-gray-500" use:clickOutside on:click_outside={menu.close}>
+<div class="absolute inset-x-0 top-full text-sm text-gray-500 z-10" use:clickOutside on:click_outside={menu.close}>
   <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
   <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
 
