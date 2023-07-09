@@ -1,15 +1,13 @@
-/** @type {import('./$types').EntryGenerator} */
-export function entries() {
-	const response = fetch('https://crisapi.vercel.app/api/v3/portfolio3/query/articles/article/siteId?id=6489005341b831ac5555eea3').then((data) => data.json());
-	
-	console.log('response', response)
-	console.log('first')
-	// return await response.json()
-	return [
-			{ slug: 'hello-world' },
-			{ slug: 'another-blog-post' },
-			{ slug: 'another-blog-posts' },
-	];
-}
+import { error } from '@sveltejs/kit';
 
-export const prerender = true;
+/** @type {import('./$types').PageLoad} */
+export function load({ params }) {
+    if (params.slug === 'hello-world') {
+        return {
+            title: 'Hello world!',
+            content: 'Welcome to our blog. Lorem ipsum dolor sit amet...'
+        };
+    }
+
+    throw error(404, 'Not found');
+}
