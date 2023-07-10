@@ -17,9 +17,8 @@
 
     Off-canvas menu for mobile, show/hide based on off-canvas menu state.
   -->
-	{#if $menuMobile}
-		<MobileMenu />
-	{/if}
+	
+	<MobileMenu pages={pages} />
 
 	<header class="relative bg-white">
 		<p

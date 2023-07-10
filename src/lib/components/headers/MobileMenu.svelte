@@ -4,9 +4,13 @@
 	import { fly, fade, slide } from "svelte/transition";
   import { flip } from 'svelte/animate'
   import { linear, quintOut } from 'svelte/easing';
+  	/**
+	 * @type {any}
+	 */
+	 export let pages;
 </script>
 
-
+{#if $menuMobile}
 <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true" transition:fade>
   <!--
     Off-canvas menu backdrop, show/hide based on off-canvas menu state.
@@ -20,7 +24,7 @@
   -->
   <div class="fixed inset-0 bg-black bg-opacity-25" ></div>
 
-  <div class="fixed inset-0 z-40 flex" transition:fly={{ x:-500, duration: 200, }}  >
+  <div class="fixed inset-0 z-40 flex"   >
     <!--
       Off-canvas menu, show/hide based on off-canvas menu state.
 
@@ -31,7 +35,7 @@
         From: "translate-x-0"
         To: "-translate-x-full"
     -->
-    <div class="relative flex w-full  max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl" use:clickOutside on:click_outside={menuMobile.close} >
+    <div class="relative flex w-full  max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl" use:clickOutside on:click_outside={menuMobile.close}  in:fly={{ x:-500, duration: 200, }} out:fly={{ x:-400, duration: 500, }}>
       <div class="flex px-4 pb-2 pt-5">
         <button on:click={menuMobile.close} type="button" class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
           <span class="sr-only">Close menu</span>
@@ -48,12 +52,12 @@
             <!-- Selected: "border-orange-600 text-orange-600", Not Selected: "border-transparent text-gray-900" -->
             <button id="tabs-1-tab-1" class="border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium" aria-controls="tabs-1-panel-1" role="tab" type="button">Women</button>
             <!-- Selected: "border-orange-600 text-orange-600", Not Selected: "border-transparent text-gray-900" -->
-            <button id="tabs-1-tab-2" class="border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium" aria-controls="tabs-1-panel-2" role="tab" type="button">Men</button>
+            <!-- <button id="tabs-1-tab-2" class="border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium" aria-controls="tabs-1-panel-2" role="tab" type="button">Men</button> -->
           </div>
         </div>
 
         <!-- 'Women' tab panel, show/hide based on tab state. -->
-        <div id="tabs-1-panel-1" class="space-y-10 px-4 pb-8 pt-10" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
+        <!-- <div id="tabs-1-panel-1" class="space-y-10 px-4 pb-8 pt-10" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
           <div class="grid grid-cols-2 gap-x-4">
             <div class="group relative text-sm">
               <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
@@ -151,9 +155,9 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
         <!-- 'Men' tab panel, show/hide based on tab state. -->
-        <div id="tabs-1-panel-2" class="space-y-10 px-4 pb-8 pt-10" aria-labelledby="tabs-1-tab-2" role="tabpanel" tabindex="0">
+        <!-- <div id="tabs-1-panel-2" class="space-y-10 px-4 pb-8 pt-10" aria-labelledby="tabs-1-tab-2" role="tabpanel" tabindex="0">
           <div class="grid grid-cols-2 gap-x-4">
             <div class="group relative text-sm">
               <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
@@ -242,16 +246,18 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="space-y-6 border-t border-gray-200 px-4 py-6">
-        <div class="flow-root">
-          <a href={"#"} class="-m-2 block p-2 font-medium text-gray-900">Company</a>
-        </div>
-        <div class="flow-root">
-          <a href={"#"} class="-m-2 block p-2 font-medium text-gray-900">Stores</a>
-        </div>
+        {#each pages as { _id, slug, data:{name} }, i}
+								
+								
+                <div class="flow-root">
+                  <a href="/{slug}" on:click={menuMobile.close}  class="-m-2 block p-2 font-medium text-gray-900">{name}</a>
+                </div>
+							{/each}
+        
       </div>
 
       <div class="space-y-6 border-t border-gray-200 px-4 py-6">
@@ -273,3 +279,4 @@
     </div>
   </div>
 </div>
+{/if}
