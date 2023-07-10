@@ -6,7 +6,7 @@
 
 </script>
 {#if $search}
-<div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+<div class="relative z-20" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
   <!--
     Background backdrop, show/hide based on slide-over state.
 
@@ -51,8 +51,8 @@
               </svg>
             </button>
           </div>
-
-          <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+          <!-- overflow-y-scroll -->
+          <div class="flex h-full flex-col  bg-white py-6 shadow-xl">
             <div class="px-4 sm:px-6">
               <h2 class="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">Search Panel</h2>
             </div>

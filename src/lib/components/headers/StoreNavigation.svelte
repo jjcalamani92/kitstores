@@ -1,6 +1,5 @@
 <script>
-	import { cart } from "$lib/stores";
-	import { menuMobile, menu, search } from '$lib/stores';
+	import { menuMobile, menu, search,cart } from '$lib/stores';
 	import FlyoutNavigation from './FlyoutNavigation.svelte';
 	import MobileMenu from './MobileMenu.svelte';
 	/**
@@ -22,7 +21,7 @@
 
 	<header class="relative bg-white">
 		<p
-			class="flex h-10 items-center justify-center bg-orange-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8"
+			class="flex h-10 items-center justify-center bg-cris-dark px-4 text-sm font-medium text-white sm:px-6 lg:px-8"
 		>
 			Get free delivery on orders over $100
 		</p>

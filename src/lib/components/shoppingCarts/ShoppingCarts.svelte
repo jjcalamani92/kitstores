@@ -3,7 +3,7 @@
 	import clickOutside from "$lib/utils/clickOutside";
 </script>
 {#if $cart}
-  <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+  <div class="relative z-20" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
     <!--
       Background backdrop, show/hide based on slide-over state.
 
@@ -29,8 +29,9 @@
               From: "translate-x-0"
               To: "translate-x-full"
           -->
+          <!-- overflow-y-scroll -->
           <div class="pointer-events-auto w-screen max-w-md" use:clickOutside on:click_outside={cart.close}>
-            <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+            <div class="flex h-full flex-col   bg-white shadow-xl">
               <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                 <div class="flex items-start justify-between">
                   <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
@@ -66,7 +67,7 @@
                             <p class="text-gray-500">Qty 1</p>
 
                             <div class="flex">
-                              <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                              <button type="button" class="font-medium text-cris-accent hover:text-cris-base">Remove</button>
                             </div>
                           </div>
                         </div>
@@ -90,7 +91,7 @@
                             <p class="text-gray-500">Qty 1</p>
 
                             <div class="flex">
-                              <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                              <button type="button" class="font-medium text-cris-accent hover:text-cris-base">Remove</button>
                             </div>
                           </div>
                         </div>
@@ -109,12 +110,12 @@
                 </div>
                 <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                 <div class="mt-6">
-                  <a href={"#"} class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                  <a href={"#"} class="flex items-center justify-center rounded-md border border-transparent bg-cris-accent px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-cris-base">Checkout</a>
                 </div>
                 <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                   <p>
                     or
-                    <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">
+                    <button type="button" class="font-medium text-cris-accent hover:text-cris-base">
                       Continue Shopping
                       <span aria-hidden="true"> &rarr;</span>
                     </button>

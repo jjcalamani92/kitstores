@@ -6,6 +6,6 @@ export async function handle({ event, resolve }) {
 		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/sites/${env.API_UID}`
 	).then((response) => response.json());
   return resolve(event, {
-      transformPageChunk: ({ html }) => html.replace('%theme%', site.data.theme.light)
+      transformPageChunk: ({ html }) => html.replace('%theme%', site.data.theme.light),
   });
 }

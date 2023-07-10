@@ -5,7 +5,9 @@
 	import ShoppingCarts from '$lib/components/shoppingCarts/ShoppingCarts.svelte';
 	import SearchSlideOvers from '$lib/components/SearchSlideOvers.svelte';
 	// import StoreNavigation from '../components/headers/StoreNavigation.svelte';
-	// console.log('pages', data)
+	const { pages, site } = data
+	// console.log('pages', pages)
+	// console.log('site', site)
 </script>
 
 <svelte:head>
@@ -23,7 +25,7 @@
 </svelte:head>
 
 <div class="app">
-	<StoreNavigation pages={data.pages} />
+	<StoreNavigation {pages} />
 	<SearchSlideOvers />
 	<ShoppingCarts />
 	<!-- <Header0 /> -->
