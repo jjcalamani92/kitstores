@@ -1,13 +1,13 @@
 <script>
   import { menuMobile } from "$lib/stores";
 	import clickOutside from "$lib/utils/clickOutside";
-	import { fly, fade } from "svelte/transition";
-  
-  
+	import { fly, fade, slide } from "svelte/transition";
+  import { flip } from 'svelte/animate'
+  import { linear, quintOut } from 'svelte/easing';
 </script>
 
 
-<div class="relative z-40 lg:hidden" role="dialog" aria-modal="true"  transition:fade>
+<div class="relative z-40 lg:hidden" role="dialog" aria-modal="true" transition:fade>
   <!--
     Off-canvas menu backdrop, show/hide based on off-canvas menu state.
 
@@ -20,7 +20,7 @@
   -->
   <div class="fixed inset-0 bg-black bg-opacity-25" ></div>
 
-  <div class="fixed inset-0 z-40 flex" >
+  <div class="fixed inset-0 z-40 flex" transition:fly={{ x:-500, duration: 200, }}  >
     <!--
       Off-canvas menu, show/hide based on off-canvas menu state.
 
@@ -31,7 +31,7 @@
         From: "translate-x-0"
         To: "-translate-x-full"
     -->
-    <div class="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl" use:clickOutside on:click_outside={menuMobile.close} >
+    <div class="relative flex w-full  max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl" use:clickOutside on:click_outside={menuMobile.close} >
       <div class="flex px-4 pb-2 pt-5">
         <button on:click={menuMobile.close} type="button" class="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
           <span class="sr-only">Close menu</span>

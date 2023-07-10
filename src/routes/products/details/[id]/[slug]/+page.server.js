@@ -1,5 +1,7 @@
 // @ts-nocheck
 import { dev } from '$app/environment';
+import { env } from '$env/dynamic/private';
+
 import { error } from '@sveltejs/kit';
 export const config = {
 	isr: {
@@ -23,7 +25,7 @@ export async function load({ params }) {
 
 
 	const products = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/products/product/siteId?id=64a56f2cfd5b4902feb027de`
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/products/product/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
   
 	// const categories2 = await fetch(

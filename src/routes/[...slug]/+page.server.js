@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { dev } from '$app/environment';
+import { env } from '$env/dynamic/private';
 
 import { error } from '@sveltejs/kit';
 export const config = {
@@ -31,24 +32,24 @@ export async function load({ params }) {
 	// console.log('concatenarElementos', concatenarElementos(['ropa', 'mujer']));
 
 	const pages = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/pages/page/siteId?id=64a56f2cfd5b4902feb027de`
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/pages/page/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
 	const categories0 = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/categories/0/category/siteId?id=64a56f2cfd5b4902feb027de`
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/categories/0/category/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
 	const categories1 = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/categories/1/category/siteId?id=64a56f2cfd5b4902feb027de`
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/categories/1/category/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
 	const categories2 = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/categories/2/category/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
   
 	const products = await fetch(
-		`https://crisapi.vercel.app/api/v3/wear2/query/products/product/siteId?id=64a56f2cfd5b4902feb027de`
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/products/product/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
   
 	// const categories2 = await fetch(
-	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
+	// 	`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/categories/2/category/siteId?id=${env.API_UID}`
 	// ).then((response) => response.json());
   
 	const paths = [...pages, ...categories0, ...categories1, ...categories2,]

@@ -1,10 +1,21 @@
 <script>
 	import { menu } from "$lib/stores";
 	import clickOutside from "$lib/utils/clickOutside";
+	import { fade, fly } from "svelte/transition";
+  
+	 /**
+	 * @type {string}
+	 */
+	  export let title;
 
   
 </script>
-<div class="absolute inset-x-0 top-full text-sm text-gray-500 z-10" use:clickOutside on:click_outside={menu.close}>
+{#if $menu}
+
+<div class="absolute inset-x-0 top-full text-sm text-gray-500 z-10 transition-opacity ease-linear duration-300" use:clickOutside on:click_outside={menu.close}
+    
+    
+>
   <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
   <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
 
@@ -24,7 +35,7 @@
             </div>
             <a href={"#"} class="mt-6 block font-medium text-gray-900">
               <span class="absolute inset-0 z-10" aria-hidden="true" />
-              New Arrivals
+              New Arrivals {title}
             </a>
             <p aria-hidden="true" class="mt-1">Shop now</p>
           </div>
@@ -140,3 +151,4 @@
     </div>
   </div>
 </div>
+{/if}

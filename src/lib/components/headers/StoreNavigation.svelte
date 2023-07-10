@@ -8,6 +8,7 @@
 	 */
 	 export let pages;
 
+	 
 </script>
 
 <div class="bg-white">
@@ -86,10 +87,10 @@
 										From: "opacity-100"
 										To: "opacity-0"
 								-->
-								{#if $menu}
-								<FlyoutNavigation />
-							{/if}
+								<FlyoutNavigation title='Women'/>
+								
 							</div>
+							
 							
 							{#each pages as { _id, slug, data:{name} }, i}
 								
