@@ -8,6 +8,20 @@
 	// console.log('pages', data)
 </script>
 
+<svelte:head>
+	<link rel="icon" type="image/svg+xml" href={data.site.data.info.icon} />
+	<link rel="shortcut icon" href={data.site.data.info.icon} type="image/x-icon" />
+		<link rel="apple-touch-icon" href={data.site.data.info.icon} />
+		<link rel="icon" type="image/svg+xml" href={data.site.data.info.icon} />
+		<link
+			rel="icon"
+			type="image/png"
+			href={data.site.data.info.icon}
+			sizes="192x192"
+		/>
+		<link rel="icon" type="image/png" href={data.site.data.info.icon} />
+</svelte:head>
+
 <div class="app">
 	<StoreNavigation pages={data.pages} />
 	<SearchSlideOvers />

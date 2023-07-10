@@ -2,11 +2,11 @@
 	import ListCategories from "$lib/components/ListCategories.svelte";
 	import ListProducts from "$lib/components/ListProducts.svelte";
 	export let data;
-	console.log('data', data)
 </script>
 <svelte:head>
 	<title>{data.page.data.name}</title>
-	<meta name="description" content="About this app" />
+	<meta name="description" content={data.page.data.description} />
+	<meta property="og:image" content={data.page.data.thumbnailUrl} />
 </svelte:head>
 
 <ListCategories categories={data.categories}/>

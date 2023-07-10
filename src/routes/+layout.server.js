@@ -12,6 +12,9 @@ export async function load() {
 	const pages = await fetch(
 		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/pages/page/siteId?id=${env.API_UID}`
 	).then((response) => response.json());
+	const site = await fetch(
+		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/sites/${env.API_UID}`
+	).then((response) => response.json());
   
-	return { pages }
+	return { pages, site }
 }
