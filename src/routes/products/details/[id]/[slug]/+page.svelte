@@ -1,7 +1,7 @@
 <script>
 	import ProductOverviews from "$lib/components/ProductOverviews.svelte";
   export let data;
-  console.log('data', data)
+	console.log('data', data)
 </script>
 <svelte:head>
 	<title>{data.product.data.name}</title>

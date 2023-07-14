@@ -4,10 +4,8 @@
 	import StoreNavigation from '$lib/components/headers/StoreNavigation.svelte';
 	import ShoppingCarts from '$lib/components/shoppingCarts/ShoppingCarts.svelte';
 	import SearchSlideOvers from '$lib/components/SearchSlideOvers.svelte';
-	// import StoreNavigation from '../components/headers/StoreNavigation.svelte';
+	
 	const { pages, site } = data
-	// console.log('pages', pages)
-	// console.log('site', site)
 </script>
 
 <svelte:head>

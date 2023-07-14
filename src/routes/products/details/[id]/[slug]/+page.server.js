@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { dev } from '$app/environment';
-import { env } from '$env/dynamic/private';
+import { getProductsBySiteId } from '$lib/fetch/products.js';
 
 import { error } from '@sveltejs/kit';
 export const config = {
@@ -23,10 +23,10 @@ export async function load({ params }) {
 	// console.log('params', params.slug)
 
 
-
-	const products = await fetch(
-		`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/products/product/siteId?id=${env.API_UID}`
-	).then((response) => response.json());
+	const products = await getProductsBySiteId()
+	// const products = await fetch(
+	// 	`${env.API_URL}/api/${env.API_V}/${env.API_TYPE}/query/products/product/siteId?id=${env.API_UID}`
+	// ).then((response) => response.json());
   
 	// const categories2 = await fetch(
 	// 	`https://crisapi.vercel.app/api/v3/wear2/query/categories/2/category/siteId?id=64a56f2cfd5b4902feb027de`
@@ -40,8 +40,8 @@ export async function load({ params }) {
 
 
 
-	const product = products.find((page) => page._id === params.id);
-	// const categories = categories0.filter((category) => category.parentId === page._id)
+	const product = products.find((product) => product._id === params.id);
+	// const categories = categories0.filter((category) => category.parentId === product._id)
 	
 	if (!product) throw error(404, 'Not found');
 

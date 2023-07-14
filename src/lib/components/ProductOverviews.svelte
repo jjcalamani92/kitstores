@@ -6,28 +6,29 @@
 </script>
 <div class="bg-white">
   <div class="pt-6">
+    
     <nav aria-label="Breadcrumb">
       <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <li>
-          <div class="flex items-center">
-            <a href={"#"} class="mr-2 text-sm font-medium text-gray-900">Men</a>
-            <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-            </svg>
-          </div>
+        {#each product.data.params.paths as { name, slug }, i}
+        {#if i < product.data.params.paths.length - 1}
+          <li>
+            <div class="flex items-center">
+              <a href={"#"} class="mr-2 text-sm font-medium text-gray-900">{name}</a>
+              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
+                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+              </svg>
+            </div>
         </li>
-        <li>
-          <div class="flex items-center">
-            <a href={"#"} class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
-            <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-            </svg>
-          </div>
-        </li>
+        {/if}
+        {/each}
+        
+        {#if product.data.params.paths.length > 0}
+          <!-- <p>Último elemento: {cats.slice(-1)[0]}</p> -->
+          <li class="text-sm">
+            <a href={"#"} aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">{product.data.params.paths.slice(-1)[0].name}</a>
+          </li>
+        {/if}
 
-        <li class="text-sm">
-          <a href={"#"} aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
-        </li>
       </ol>
     </nav>
 
@@ -58,7 +59,7 @@
       <!-- Options -->
       <div class="mt-4 lg:row-span-3 lg:mt-0">
         <h2 class="sr-only">Product information</h2>
-        <p class="text-3xl tracking-tight text-gray-900">${product.data.price}</p>
+        <p class="text-3xl tracking-tight text-gray-900">${product.data.price || 50}</p>
 
         <!-- Reviews -->
         <div class="mt-6">
